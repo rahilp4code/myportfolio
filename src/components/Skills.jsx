@@ -1,43 +1,98 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiTailwindcss,
+  SiMongodb,
+  SiPostgresql,
+  SiGithub,
+  SiGit,
+  SiVite,
+  SiRedux,
+  SiSupabase,
+  SiPostman,
+} from "react-icons/si";
+
+// const groups = [
+//   {
+//     title: "Languages",
+//     items: ["JavaScript", "TypeScript"],
+//   },
+//   {
+//     title: "Frameworks / Libraries",
+//     items: [
+//       "React",
+//       "Next.js",
+//       "Express.js",
+//       "Node.js",
+//       "Tailwind CSS",
+//       "Mongoose",
+//       "Framer Motion",
+//     ],
+//   },
+//   {
+//     title: "Backend & Runtime",
+//     items: ["Node.js", "Express.js", "REST APIs"],
+//   },
+//   {
+//     title: "Database",
+//     items: ["MongoDB", "PostgreSQL"],
+//   },
+//   {
+//     title: "Developer Tools",
+//     items: [
+//       "Git",
+//       "GitHub",
+//       "VS Code",
+//       "Vercel",
+//       "Postman",
+//       "Vite",
+//       "Render",
+//       "Redux",
+//       "Supabase",
+//     ],
+//   },
+// ];
 
 const groups = [
   {
     title: "Languages",
-    items: ["JavaScript", "TypeScript"],
+    items: [
+      { label: "JavaScript", icon: <SiJavascript /> },
+      { label: "TypeScript", icon: <SiTypescript /> },
+    ],
   },
   {
     title: "Frameworks / Libraries",
     items: [
-      "React",
-      "Next.js",
-      "Express.js",
-      "Node.js",
-      "Tailwind CSS",
-      "Mongoose",
-      "Framer Motion",
+      { label: "React", icon: <SiReact /> },
+      { label: "Next.js", icon: <SiNextdotjs /> },
+      { label: "Express.js", icon: <SiExpress /> },
+      { label: "Node.js", icon: <SiNodedotjs /> },
+      { label: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { label: "Redux", icon: <SiRedux /> },
     ],
   },
   {
-    title: "Backend & Runtime",
-    items: ["Node.js", "Express.js", "REST APIs"],
-  },
-  {
     title: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: [
+      { label: "MongoDB", icon: <SiMongodb /> },
+      { label: "PostgreSQL", icon: <SiPostgresql /> },
+    ],
   },
   {
-    title: "Developer Tools",
+    title: "Tools",
     items: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Vercel",
-      "Postman",
-      "Vite",
-      "Render",
-      "Redux",
-      "Supabase",
+      { label: "Git", icon: <SiGit /> },
+      { label: "GitHub", icon: <SiGithub /> },
+      { label: "Vite", icon: <SiVite /> },
+      { label: "Postman", icon: <SiPostman /> },
+      { label: "Supabase", icon: <SiSupabase /> },
     ],
   },
 ];
@@ -54,7 +109,7 @@ export default function Skills() {
         <h2 className="text-2xl font-semibold tracking-tight text-slate-50">
           Tech I work with
         </h2>
-        <p className="mx-auto max-w-2xl text-xs text-slate-400">
+        <p className=" max-w-2xl text-xs text-slate-400">
           A focused MERN stack with an emphasis on clean REST APIs, solid
           authentication and responsive UIs. This list will keep growing as I
           learn and build more.
@@ -75,7 +130,9 @@ export default function Skills() {
             </p>
             <div className="flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <SkillPill key={item}>{item}</SkillPill>
+                <SkillPill key={item.label} icon={item.icon}>
+                  {item.label}
+                </SkillPill>
               ))}
             </div>
           </div>
@@ -98,7 +155,21 @@ export default function Skills() {
   );
 }
 
-function SkillPill({ children, highlight }) {
+// function SkillPill({ children, highlight }) {
+//   return (
+//     <span
+//       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium ${
+//         highlight
+//           ? "border-emerald-400/70 bg-emerald-500/10 text-emerald-100"
+//           : "border-white/12 bg-white/5 text-slate-100"
+//       }`}
+//     >
+//       <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-emerald-300 via-slate-100 to-emerald-500" />
+//       {children}
+//     </span>
+//   );
+// }
+function SkillPill({ children, icon, highlight }) {
   return (
     <span
       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium ${
@@ -107,7 +178,7 @@ function SkillPill({ children, highlight }) {
           : "border-white/12 bg-white/5 text-slate-100"
       }`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-emerald-300 via-slate-100 to-emerald-500" />
+      {icon && <span className="text-lg">{icon}</span>}
       {children}
     </span>
   );

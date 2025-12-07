@@ -11,7 +11,7 @@ export default function Contact() {
         <h2 className="text-2xl font-semibold tracking-tight text-slate-50">
           Let&apos;s build something
         </h2>
-        <p className="mx-auto max-w-2xl text-xs text-slate-400">
+        <p className=" max-w-2xl text-xs text-slate-400">
           Open to full-time roles, internships and freelance work. Feel free to
           reach out if you want to work together or just talk about an idea.
         </p>
@@ -26,9 +26,7 @@ export default function Contact() {
       >
         {/* Links */}
         <div className="space-y-3 rounded-3xl border border-white/10 bg-black/60 p-5 shadow-xl shadow-black/70 text-sm">
-          <h3 className="text-sm font-semibold text-slate-100">
-            Direct links
-          </h3>
+          <h3 className="text-sm font-semibold text-slate-100">Direct links</h3>
           <p className="text-xs text-slate-400">
             Replace these with your real profiles whenever you&apos;re ready.
           </p>
@@ -39,7 +37,7 @@ export default function Contact() {
                 href="#"
                 className="underline decoration-dotted underline-offset-2 hover:text-emerald-300"
               >
-                your-email-here
+                pathanrahil2244@gmail.com
               </a>
             </li>
             <li>
@@ -48,7 +46,7 @@ export default function Contact() {
                 href="#"
                 className="underline decoration-dotted underline-offset-2 hover:text-emerald-300"
               >
-                your-github
+                https://github.com/rahilp4code
               </a>
             </li>
             <li>
@@ -66,7 +64,7 @@ export default function Contact() {
                 href="#"
                 className="underline decoration-dotted underline-offset-2 hover:text-emerald-300"
               >
-                your-twitter
+                https://x.com/RahilP4Code
               </a>
             </li>
           </ul>
@@ -104,8 +102,7 @@ export default function Contact() {
             Send Message (dummy)
           </button>
           <p className="text-[10px] text-slate-500">
-            This form is frontend-only right now. You can hook it up to an API
-            or a service like Formspree later.
+            This form is frontend-only right now.
           </p>
         </form>
       </motion.div>

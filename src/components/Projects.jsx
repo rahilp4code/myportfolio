@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     name: "Daily To-Do List",
-    tagline: "Stay on top of your day with authenticated, date-based tasks.",
+    tagline: "Authenticated to-do list with date-based progress tracking.",
     bullets: [
       "Full CRUD to add, edit, complete and delete tasks persisted in MongoDB.",
       "Tasks are grouped and saved by date so you can see your daily progress.",
@@ -15,8 +15,7 @@ const projects = [
   },
   {
     name: "WorldRev",
-    tagline:
-      "Map-based travel reviews where every place you visit becomes a pin.",
+    tagline: "Map-based travel reviews for places you actually visited.",
     bullets: [
       "Leaflet map integration to drop pins for locations you've visited.",
       "Attach ratings, notes and visit dates to build a travel history.",
@@ -29,9 +28,9 @@ const projects = [
     name: "JWT Auth API",
     tagline: "Production-ready authentication boilerplate for MERN apps.",
     bullets: [
-      "Implements signup, login, logout, refresh tokens and protected routes.",
-      "Password hashing, validation and role-based access ready to plug in.",
-      "Reusable starter for future full-stack projects with secure auth.",
+      "Signup, login, logout, refresh tokens and protected routes.",
+      "Password hashing, validation and role-based access built-in.",
+      "Designed as a reusable starter for future full-stack projects.",
     ],
     stack: "Node.js · Express · MongoDB · Mongoose · JWT",
     status: "Featured",
@@ -49,9 +48,8 @@ export default function Projects() {
           Selected work
         </h2>
         <p className="mx-auto max-w-2xl text-xs text-slate-400">
-          A few projects that show how I think about building real products:
-          authentication, maps, and everyday CRUD apps that actually solve
-          problems.
+          A few projects that show how I think about building products:
+          authentication, maps, and everyday tools that people can actually use.
         </p>
       </div>
 
@@ -63,26 +61,29 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: index * 0.07 }}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/60 p-5 shadow-xl shadow-black/70 transition hover:border-emerald-400/70"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-xl shadow-black/70 transition hover:border-emerald-400/70 hover:shadow-emerald-500/20"
           >
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-emerald-400/10 opacity-0 transition group-hover:opacity-100" />
-
-            <div className="relative space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="text-lg font-semibold text-slate-50">
+            {/* Thumbnail area */}
+            <div className="relative h-32 w-full overflow-hidden bg-gradient-to-tr from-emerald-500/20 via-slate-900 to-black">
+              <div className="absolute inset-0 scale-110 bg-[radial-gradient(circle_at_10%_0%,rgba(16,185,129,0.4),transparent_50%),radial-gradient(circle_at_90%_100%,rgba(52,211,153,0.5),transparent_55%)] opacity-70 transition-transform duration-500 group-hover:scale-100" />
+              <div className="relative flex h-full items-end justify-between px-4 pb-3">
+                <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] text-emerald-100">
                   {project.name}
-                </h3>
+                </span>
                 <span
-                  className={`inline-flex items-center rounded-full border px-3 py-0.5 text-[10px] uppercase tracking-[0.16em] ${
+                  className={`rounded-full border px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] ${
                     project.status === "Featured"
-                      ? "border-emerald-400/80 bg-emerald-500/10 text-emerald-100"
+                      ? "border-emerald-400/80 bg-emerald-500/15 text-emerald-100"
                       : "border-amber-400/70 bg-amber-500/10 text-amber-100"
                   }`}
                 >
                   {project.status}
                 </span>
               </div>
+            </div>
 
+            {/* Content */}
+            <div className="relative space-y-3 p-5">
               <p className="text-xs text-slate-300">{project.tagline}</p>
 
               <ul className="space-y-1.5 text-xs text-slate-400">
