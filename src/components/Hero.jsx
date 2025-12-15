@@ -75,7 +75,8 @@ export default function Hero() {
             View Projects
           </a>
           <a
-            href="#" // resume link later
+            href="/rahilp4Code_Resume.pdf" // resume link later
+            download
             className="rounded-full border border-white/15 bg-transparent px-6 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/5"
           >
             Download Resume

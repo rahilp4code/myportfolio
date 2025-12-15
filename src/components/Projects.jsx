@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import todoImg from "../assets/projects/to_do.png";
+import worldrevImg from "../assets/projects/map.png";
+import jwtImg from "../assets/projects/jwt_api.png";
 
 const projects = [
   {
     name: "Daily To-Do List",
+    image: todoImg,
     tagline: "Authenticated to-do list with date-based progress tracking.",
     bullets: [
       "Full CRUD to add, edit, complete and delete tasks persisted in MongoDB.",
@@ -15,6 +19,7 @@ const projects = [
   },
   {
     name: "WorldRev",
+    image: worldrevImg,
     tagline: "Map-based travel reviews for places you actually visited.",
     bullets: [
       "Leaflet map integration to drop pins for locations you've visited.",
@@ -26,6 +31,7 @@ const projects = [
   },
   {
     name: "JWT Auth API",
+    image: jwtImg,
     tagline: "Production-ready authentication boilerplate for MERN apps.",
     bullets: [
       "Signup, login, logout, refresh tokens and protected routes.",
@@ -61,12 +67,40 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: index * 0.07 }}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-xl shadow-black/70 transition hover:border-emerald-400/70 hover:shadow-emerald-500/20"
+            // className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-xl shadow-black/70 transition hover:border-emerald-400/70 hover:shadow-emerald-500/20"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/60 shadow-xl transition hover:border-emerald-400/70"
           >
             {/* Thumbnail area */}
-            <div className="relative h-32 w-full overflow-hidden bg-gradient-to-tr from-emerald-500/20 via-slate-900 to-black">
+            {/* <div className="relative h-32 w-full overflow-hidden bg-gradient-to-tr from-emerald-500/20 via-slate-900 to-black">
               <div className="absolute inset-0 scale-110 bg-[radial-gradient(circle_at_10%_0%,rgba(16,185,129,0.4),transparent_50%),radial-gradient(circle_at_90%_100%,rgba(52,211,153,0.5),transparent_55%)] opacity-70 transition-transform duration-500 group-hover:scale-100" />
               <div className="relative flex h-full items-end justify-between px-4 pb-3">
+                <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] text-emerald-100">
+                  {project.name}
+                </span>
+                <span
+                  className={`rounded-full border px-2.5 py-0.5 text-[10px] uppercase tracking-[0.14em] ${
+                    project.status === "Featured"
+                      ? "border-emerald-400/80 bg-emerald-500/15 text-emerald-100"
+                      : "border-amber-400/70 bg-amber-500/10 text-amber-100"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+            </div> */}
+            <div className="relative h-40 w-full overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.name}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+              {/* Title + status */}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                 <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] text-emerald-100">
                   {project.name}
                 </span>
