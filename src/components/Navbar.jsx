@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import avatar from "../assets/avatar.png";
 
 const links = [
   { href: "#skills", label: "Skills", id: "skills" },
@@ -16,7 +17,7 @@ export default function Navbar({ activeSection }) {
         {/* Logo */}
         <a href="#top" className="flex items-center gap-2">
           <img
-            src="/src/assets/avator.png"
+            src={avatar}
             alt="Logo"
             className="h-9 w-9 rounded-full border border-emerald-400/40 object-cover shadow-md"
           />

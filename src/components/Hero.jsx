@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import img from "../assets/image.png";
 
 export default function Hero() {
   return (
@@ -18,8 +19,7 @@ export default function Hero() {
           <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-tr from-emerald-500/40 via-emerald-400/10 to-transparent blur-xl opacity-70" />
           <div className="relative flex h-24 w-24 items-center justify-center rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-800 via-slate-900 to-black text-3xl font-semibold text-slate-100 shadow-2xl">
             <img
-              // src={img}
-              src="/src/assets/image.png"
+              src={img}
               alt="Ehsaan"
               className="h-20 w-20 rounded-[1.5rem] object-cover"
             />
